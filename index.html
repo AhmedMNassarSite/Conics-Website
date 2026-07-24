@@ -3,162 +3,272 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CONICS — One Platform for Consultants, Contractors & Clients</title>
-<meta name="description" content="CONICS connects Engineering Consultants, Contractors, and Clients on a single, precision-built platform — from project creation and document control to invoicing milestones and payment approval." />
+<title>CONICS — One Platform. Every Project. Full Control.</title>
+<meta name="description" content="CONICs connects Engineering Consultants, Contractors, and Clients on a single, precision-built platform — from project creation and document control to invoicing milestones and payment approval." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --navy:#0b2545;
-    --navy-2:#13315c;
-    --steel:#134074;
-    --sky:#3a86ff;
-    --sky-2:#5b9bff;
-    --amber:#ff8c42;
-    --ink:#0f172a;
-    --slate:#475569;
-    --mist:#eef2f7;
-    --line:#e2e8f0;
+    --teal:#42b3a1;
+    --teal-2:#57c0b0;
+    --teal-dark:#2f9d8c;
+    --teal-tint:#e3f2ee;
+    --navy:#12303f;
+    --navy-2:#0e2733;
+    --ink:#173642;
+    --muted:#5f7d88;
+    --muted-2:#7c96a0;
+    --mint:#f3f8f6;
+    --mint-2:#edf4f1;
+    --line:#dbe7e3;
+    --line-2:#e6efeb;
     --white:#ffffff;
-    --radius:16px;
-    --shadow:0 20px 45px -20px rgba(11,37,69,.35);
-    --maxw:1160px;
+    --radius:14px;
+    --shadow:0 24px 60px -28px rgba(18,48,63,.35);
+    --maxw:1240px;
+    --font-head:'Poppins',system-ui,sans-serif;
+    --font-body:'Inter',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-    color:var(--ink);
-    background:var(--white);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.brand{font-family:'Sora','Inter',sans-serif;line-height:1.15;letter-spacing:-.02em}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,.brand-txt{font-family:var(--font-head);line-height:1.1;letter-spacing:-.015em;color:var(--navy)}
   a{text-decoration:none;color:inherit}
   img{max-width:100%;display:block}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px;
-    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    cursor:pointer;border:0;
-  }
-  .btn-primary{background:var(--sky);color:#fff;box-shadow:0 10px 24px -10px rgba(58,134,255,.7)}
-  .btn-primary:hover{transform:translateY(-2px);background:var(--sky-2)}
-  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
-  .btn-ghost:hover{border-color:var(--sky);color:var(--steel)}
-  .btn-amber{background:var(--amber);color:#fff;box-shadow:0 10px 24px -10px rgba(255,140,66,.7)}
-  .btn-amber:hover{transform:translateY(-2px);filter:brightness(1.05)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+  /* grid overlays */
+  .grid-light{position:relative}
+  .grid-light::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(66,179,161,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(66,179,161,.06) 1px,transparent 1px);
+    background-size:46px 46px;z-index:0}
+  .grid-light>*{position:relative;z-index:1}
+  .grid-dark::before{background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px)}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:8px;font-weight:600;font-size:15px;font-family:var(--font-body);cursor:pointer;border:1.5px solid transparent;transition:.18s ease}
+  .btn-teal{background:var(--teal);color:#fff}
+  .btn-teal:hover{background:var(--teal-dark)}
+  .btn-outline{background:transparent;color:var(--navy);border-color:var(--line)}
+  .btn-outline:hover{border-color:var(--teal);color:var(--teal-dark)}
+  .btn-ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-ghost-light:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn-white{background:#fff;color:var(--teal-dark)}
+  .btn-white:hover{background:#eafaf6}
+
+  /* eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--teal);font-weight:600;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-family:var(--font-body);margin-bottom:22px}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--teal)}
+  .eyebrow.center{justify-content:center}
 
   /* NAV */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--navy)}
-  .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--sky),var(--navy));display:grid;place-items:center;color:#fff;font-weight:800;font-family:'Sora';font-size:18px}
-  .nav-links{display:flex;align-items:center;gap:32px}
-  .nav-links a{font-weight:500;color:var(--slate);font-size:15px}
-  .nav-links a:hover{color:var(--navy)}
-  .nav-cta{display:flex;gap:12px;align-items:center}
+  header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand-txt{font-weight:800;font-size:22px;color:var(--navy);letter-spacing:.02em}
+  .logo-ic{width:34px;height:34px;flex:0 0 auto}
+  .nav-links{display:flex;gap:38px}
+  .nav-links a{color:var(--ink);font-weight:500;font-size:15px}
+  .nav-links a:hover{color:var(--teal-dark)}
   .menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--navy);cursor:pointer}
 
   /* HERO */
-  .hero{position:relative;overflow:hidden;background:radial-gradient(1200px 600px at 80% -10%, rgba(58,134,255,.18), transparent 60%), linear-gradient(180deg,#f7fafd 0%, #ffffff 100%)}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:84px 0 92px}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#e8f0fe;color:var(--steel);font-weight:600;font-size:13px;padding:7px 14px;border-radius:100px;margin-bottom:22px;letter-spacing:.01em}
-  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--sky)}
-  .hero h1{font-size:clamp(34px,5vw,54px);color:var(--navy);font-weight:800}
-  .hero h1 .grad{background:linear-gradient(90deg,var(--sky),var(--steel));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .hero p.lead{font-size:19px;color:var(--slate);margin:22px 0 30px;max-width:560px}
+  .hero{position:relative;background:var(--navy);overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background-image:linear-gradient(120deg,rgba(14,39,51,.94) 0%,rgba(18,48,63,.82) 55%,rgba(47,157,140,.35) 100%),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1900&q=80');background-size:cover;background-position:center}
+  .hero-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;padding:96px 0 104px}
+  .hero-copy .eyebrow{color:var(--teal-2)}
+  .hero-copy .eyebrow::before{background:var(--teal-2)}
+  .hero h1{font-size:clamp(40px,5.4vw,64px);color:#fff;font-weight:800;letter-spacing:-.02em}
+  .hero p.lead{color:#c9d8dd;font-size:18px;margin:26px 0 34px;max-width:540px}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-meta{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
-  .hero-meta .m strong{font-family:'Sora';font-size:26px;color:var(--navy);display:block}
-  .hero-meta .m span{font-size:13px;color:var(--slate)}
-  .hero-visual{position:relative}
-  .hero-visual img{border-radius:20px;box-shadow:var(--shadow);width:100%;height:520px;object-fit:cover}
-  .float-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px;display:flex;align-items:center;gap:12px}
-  .float-card .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:18px;color:#fff}
-  .fc-1{bottom:26px;left:-24px}
-  .fc-1 .ic{background:var(--sky)}
-  .fc-2{top:26px;right:-20px}
-  .fc-2 .ic{background:var(--amber)}
-  .float-card small{color:var(--slate);font-size:12px;display:block}
-  .float-card b{font-size:14px;color:var(--navy);font-family:'Sora'}
+  .hero-stats{display:flex;gap:44px;margin-top:52px;padding-top:34px;border-top:1px solid rgba(255,255,255,.14)}
+  .hero-stats .s strong{font-family:var(--font-head);font-weight:700;font-size:34px;color:#fff;display:block;line-height:1}
+  .hero-stats .s span{color:#9fb4bb;font-size:13px;margin-top:6px;display:block}
 
-  /* LOGO STRIP / AUDIENCE */
-  .audience{background:var(--navy);color:#fff}
-  .audience .wrap{padding:30px 24px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
-  .audience p{color:#c7d6ec;font-weight:500;letter-spacing:.02em}
-  .audience .pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:8px 16px;border-radius:100px;font-weight:600;font-size:14px}
+  /* browser mock */
+  .mock{background:#fff;border-radius:14px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(255,255,255,.5)}
+  .mock-bar{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid var(--line-2);background:#fbfdfc}
+  .dots{display:flex;gap:7px}
+  .dots i{width:11px;height:11px;border-radius:50%;display:block}
+  .dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+  .mock-url{flex:1;background:#fff;border:1px solid var(--line);border-radius:7px;padding:6px 12px;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
+  .mock-url b{color:var(--navy);font-weight:600}
+  .mock-body{padding:20px;font-family:var(--font-mono)}
+  .mock-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .mock-head .t{font-size:13px;color:var(--navy);font-weight:600}
+  .badge{font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px}
+  .badge.live{background:var(--teal-tint);color:var(--teal-dark)}
+  .badge.warn{background:#fdf1d8;color:#b07d16}
+  .badge.paid{background:var(--teal-tint);color:var(--teal-dark)}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .tile{border:1px solid var(--line-2);border-radius:9px;padding:12px}
+  .tile small{display:block;font-size:10.5px;color:var(--muted-2);letter-spacing:.02em;margin-bottom:8px}
+  .tile b{font-family:var(--font-head);font-size:22px;color:var(--navy);display:block;line-height:1}
+  .tile em{font-style:normal;font-size:11px;color:var(--teal-dark);display:block;margin-top:5px}
+  .prow{border-top:1px solid var(--line-2);padding:12px 2px;display:grid;grid-template-columns:1fr 96px;gap:14px;align-items:center}
+  .prow .pn{font-size:12.5px;color:var(--navy);font-weight:500}
+  .prow .ps{font-size:10.5px;color:var(--muted-2);margin-top:3px}
+  .bar{height:4px;background:var(--line-2);border-radius:4px;overflow:hidden;position:relative}
+  .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--teal);border-radius:4px;display:block}
+  .prow .pct{font-size:11px;color:var(--muted);text-align:right;margin-top:5px}
 
-  /* SECTION SHELL */
-  section.pad{padding:92px 0}
-  .sec-head{max-width:680px;margin:0 auto 56px;text-align:center}
-  .sec-head .tag{color:var(--sky);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
-  .sec-head h2{font-size:clamp(28px,3.6vw,40px);color:var(--navy);margin:12px 0 14px}
-  .sec-head p{color:var(--slate);font-size:17px}
+  /* approver rows */
+  .arow{display:flex;align-items:center;gap:12px;padding:11px 2px;border-top:1px solid var(--line-2)}
+  .chk{width:22px;height:22px;border-radius:6px;flex:0 0 auto;display:grid;place-items:center;font-size:11px;font-weight:600}
+  .chk.on{background:var(--teal);color:#fff}
+  .chk.off{background:var(--mint-2);color:var(--muted-2)}
+  .arow .an{font-size:12.5px;color:var(--navy);font-weight:500}
+  .arow .ar{font-size:10.5px;color:var(--muted-2);margin-top:2px}
+  .arow .at{margin-left:auto;font-size:11px;color:var(--muted-2)}
+  /* milestone rows */
+  .mrow{display:flex;align-items:center;gap:12px;padding:12px 12px;border:1px solid var(--line-2);border-radius:8px;margin-bottom:8px}
+  .mrow .md{width:9px;height:9px;border-radius:50%;background:var(--teal);flex:0 0 auto}
+  .mrow .md.up{background:#cfe0dc}
+  .mrow .mn{font-size:12.5px;color:var(--navy);font-weight:500}
+  .mrow .mv{margin-left:auto;font-size:12px;color:var(--navy);font-weight:600}
+  .mrow .mt{font-size:10.5px;font-weight:600;width:64px;text-align:right}
+  .mt.paid{color:var(--teal-dark)}.mt.inv{color:#b07d16}.mt.upc{color:var(--muted-2)}
 
-  /* FEATURES */
-  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:transform .2s ease, box-shadow .2s ease, border-color .2s}
-  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#d7e3f4}
-  .card .ic{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,#e8f0fe,#dfeafe);display:grid;place-items:center;font-size:24px;margin-bottom:18px}
-  .card h3{font-size:19px;color:var(--navy);margin-bottom:9px}
-  .card p{color:var(--slate);font-size:15px}
+  /* SECTION shells */
+  section{position:relative}
+  .pad{padding:104px 0}
+  .sec-head{text-align:center;max-width:720px;margin:0 auto 60px}
+  .sec-head h2{font-size:clamp(30px,3.8vw,44px);font-weight:700}
+  .sec-head.light h2{color:#fff}
+  .sec-head .eyebrow{margin-bottom:18px}
 
-  /* HOW IT WORKS */
-  .how{background:linear-gradient(180deg,#f7fafd,#fff)}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:step}
-  .step{position:relative;padding:34px 26px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
-  .step::before{counter-increment:step;content:counter(step);position:absolute;top:-18px;left:26px;width:44px;height:44px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Sora';font-weight:700;font-size:18px;box-shadow:0 8px 18px -8px rgba(11,37,69,.6)}
-  .step h3{margin:14px 0 8px;color:var(--navy);font-size:19px}
-  .step p{color:var(--slate);font-size:15px}
+  /* WORKFLOW */
+  .workflow{background:var(--mint)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;max-width:1080px;margin:0 auto}
+  .step{text-align:center;padding:0 30px;position:relative}
+  .step .num{width:74px;height:74px;margin:0 auto 26px;background:#fff;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;font-family:var(--font-mono);font-weight:600;font-size:24px;color:var(--teal);box-shadow:0 10px 24px -14px rgba(18,48,63,.25);position:relative;z-index:2}
+  .steps::before{content:"";position:absolute;top:37px;left:16%;right:16%;height:1px;background:var(--line);z-index:1}
+  .step h3{font-size:21px;font-weight:600;margin-bottom:12px}
+  .step p{color:var(--muted);font-size:15px}
 
-  /* SPLIT SHOWCASE */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .split img{border-radius:20px;box-shadow:var(--shadow);height:440px;width:100%;object-fit:cover}
-  .split h2{font-size:clamp(26px,3.2vw,36px);color:var(--navy);margin-bottom:16px}
-  .split ul{list-style:none;margin-top:22px;display:grid;gap:14px}
-  .split li{display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:16px}
-  .split li .ck{flex:0 0 auto;width:24px;height:24px;border-radius:7px;background:#e8f0fe;color:var(--sky);display:grid;place-items:center;font-weight:700;font-size:13px;margin-top:2px}
-  .split li b{color:var(--navy);font-weight:600}
+  /* CORE CAPABILITIES */
+  .caps{background:var(--navy);overflow:hidden}
+  .caps-bg{position:absolute;inset:0;background-image:linear-gradient(160deg,rgba(14,39,51,.93),rgba(18,48,63,.86) 60%,rgba(18,48,63,.9)),url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1900&q=80');background-size:cover;background-position:center}
+  .caps-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px}
+  .caps .inner{position:relative}
+  .caps .sec-head{text-align:left;margin:0 0 52px}
+  .caps h2{color:#fff;max-width:620px}
+  .caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .cap{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--radius);padding:30px;backdrop-filter:blur(3px)}
+  .cap.wide{grid-column:span 2}
+  .cap .ic{width:48px;height:48px;border-radius:11px;background:rgba(66,179,161,.16);display:grid;place-items:center;margin-bottom:20px}
+  .cap .ic svg{width:24px;height:24px;stroke:var(--teal-2);fill:none;stroke-width:1.7}
+  .cap h3{color:#fff;font-size:19px;font-weight:600;margin-bottom:10px}
+  .cap p{color:#b3c4ca;font-size:14.5px}
 
-  /* CTA */
-  .cta{background:linear-gradient(135deg,var(--navy),var(--steel));color:#fff;border-radius:26px;padding:64px 48px;text-align:center;position:relative;overflow:hidden}
-  .cta::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 15% 0%, rgba(58,134,255,.35), transparent 60%);pointer-events:none}
-  .cta h2{font-size:clamp(28px,3.6vw,42px);position:relative}
-  .cta p{color:#cfe0f5;font-size:18px;margin:16px auto 30px;max-width:560px;position:relative}
-  .cta .hero-actions{justify-content:center;position:relative}
-  .cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
-  .cta .btn-ghost:hover{border-color:#fff;color:#fff}
+  /* INSIDE PLATFORM */
+  .inside{background:var(--mint)}
+  .plat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .plat .mock{box-shadow:0 20px 50px -30px rgba(18,48,63,.4);border:1px solid var(--line-2)}
+  .plat-cap{margin-top:22px}
+  .plat-cap h3{font-size:18px;font-weight:600;margin-bottom:7px}
+  .plat-cap p{color:var(--muted);font-size:14.5px}
+
+  /* CASE STUDIES */
+  .cases{background:var(--white)}
+  .cases .sec-head{text-align:left;margin:0 0 52px}
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .case{background:var(--mint-2);border:1px solid var(--line-2);border-radius:var(--radius);padding:32px}
+  .case .lab{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:22px}
+  .case h3{font-size:27px;font-weight:700;color:var(--teal-dark);margin-bottom:16px;line-height:1.15}
+  .case p{color:var(--muted);font-size:14.5px;margin-bottom:26px}
+  .case .who{border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--muted)}
+
+  /* TESTIMONIALS */
+  .fromfield{background:var(--navy);overflow:hidden}
+  .field-bg{position:absolute;inset:0;background-image:linear-gradient(160deg,rgba(14,39,51,.9),rgba(18,48,63,.86)),url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1900&q=80');background-size:cover;background-position:center}
+  .field-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px}
+  .fromfield .inner{position:relative}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .quote{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--radius);padding:30px}
+  .quote .qm{font-family:Georgia,serif;font-size:44px;line-height:.4;color:var(--teal-2);margin-bottom:22px;display:block;height:20px}
+  .quote p{color:#cddadf;font-size:15px;margin-bottom:26px}
+  .quote .by{border-top:1px solid rgba(255,255,255,.14);padding-top:16px}
+  .quote .by b{color:#fff;font-family:var(--font-head);font-weight:600;font-size:15px;display:block}
+  .quote .by span{color:#9fb4bb;font-size:12.5px}
+
+  /* PRICING */
+  .pricing{background:var(--mint)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1120px;margin:0 auto;align-items:start}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px 30px;position:relative}
+  .plan.pop{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 30px 60px -30px rgba(66,179,161,.6)}
+  .pop-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:12px;font-weight:600;padding:7px 18px;border-radius:20px;font-family:var(--font-body)}
+  .plan .pname{font-family:var(--font-head);font-weight:600;font-size:18px;color:var(--teal-dark);margin-bottom:16px}
+  .plan.pop .pname{color:#d6f5ee}
+  .plan .amt{font-family:var(--font-head);font-weight:700;font-size:46px;color:var(--navy);line-height:1}
+  .plan.pop .amt{color:#fff}
+  .plan .amt span{font-size:15px;font-weight:500;color:var(--muted);font-family:var(--font-body)}
+  .plan.pop .amt span{color:#e2f6f1}
+  .plan .pdesc{color:var(--muted);font-size:14px;margin:16px 0 24px}
+  .plan.pop .pdesc{color:#eafaf6}
+  .plan ul{list-style:none;display:grid;gap:14px;margin-bottom:30px}
+  .plan li{display:flex;gap:11px;align-items:center;font-size:14.5px;color:var(--ink)}
+  .plan.pop li{color:#fff}
+  .plan li svg{width:17px;height:17px;flex:0 0 auto;stroke:var(--teal);fill:none;stroke-width:2.4}
+  .plan.pop li svg{stroke:#fff}
+  .plan .btn{width:100%;justify-content:center}
+
+  /* CONTACT */
+  .contact{background:var(--white)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+  .contact h2{font-size:clamp(30px,3.6vw,42px);font-weight:700;margin-bottom:18px}
+  .contact .lead{color:var(--muted);font-size:17px;margin-bottom:30px;max-width:440px}
+  .clist{list-style:none;display:grid;gap:16px}
+  .clist li{display:flex;gap:12px;align-items:center;color:var(--ink);font-size:15px}
+  .clist .cbx{width:26px;height:26px;border-radius:7px;background:var(--teal-tint);display:grid;place-items:center;flex:0 0 auto}
+  .clist .cbx svg{width:15px;height:15px;stroke:var(--teal-dark);fill:none;stroke-width:2.6}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px;box-shadow:var(--shadow)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px}
+  .field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:13px 14px;font-family:var(--font-body);font-size:14.5px;color:var(--navy);background:#fbfdfc;transition:.15s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);background:#fff}
+  .field textarea{resize:vertical;min-height:96px}
+  .form-card .btn{width:100%;justify-content:center;margin-top:4px}
+  .form-note{text-align:center;color:var(--muted);font-size:13px;margin-top:16px}
 
   /* FOOTER */
-  footer{background:var(--navy);color:#c7d6ec;padding:60px 0 30px;margin-top:0}
-  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
-  footer .brand{color:#fff;margin-bottom:14px}
-  footer p.about{color:#9db4d4;font-size:15px;max-width:320px}
-  footer h4{color:#fff;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
-  footer ul{list-style:none;display:grid;gap:10px}
-  footer ul a{color:#9db4d4;font-size:15px}
-  footer ul a:hover{color:#fff}
-  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;flex-wrap:wrap;gap:12px;color:#8ba6c9;font-size:14px}
+  footer{background:var(--mint);border-top:1px solid var(--line-2);padding:70px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:48px;padding-bottom:44px}
+  .foot-about{color:var(--muted);font-size:14.5px;max-width:300px;margin:20px 0 24px}
+  .socials{display:flex;gap:12px}
+  .socials a{width:38px;height:38px;border:1px solid var(--line);border-radius:9px;display:grid;place-items:center;background:#fff}
+  .socials a:hover{border-color:var(--teal)}
+  .socials svg{width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:1.8}
+  .socials a:hover svg{stroke:var(--teal-dark)}
+  footer h4{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:18px}
+  footer ul{list-style:none;display:grid;gap:12px}
+  footer ul a{color:var(--muted);font-size:14.5px}
+  footer ul a:hover{color:var(--teal-dark)}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted-2);font-size:13.5px}
 
   /* RESPONSIVE */
-  @media (max-width:960px){
-    .hero-grid{grid-template-columns:1fr;gap:44px;padding:60px 0}
-    .hero-visual img{height:380px}
-    .features,.steps{grid-template-columns:1fr}
-    .split{grid-template-columns:1fr;gap:34px}
-    .split img{height:320px;order:-1}
+  @media (max-width:1000px){
+    .hero-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+    .caps-grid,.plat-grid,.case-grid,.quote-grid,.price-grid{grid-template-columns:1fr}
+    .cap.wide{grid-column:span 1}
+    .steps{grid-template-columns:1fr;gap:44px}
+    .steps::before{display:none}
     .foot-grid{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
     .menu-btn{display:block}
-    .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:#fff;padding:22px 32px;gap:20px;border-bottom:1px solid var(--line)}
   }
-  @media (max-width:560px){
+  @media (max-width:600px){
+    .wrap{padding:0 20px}
+    .pad{padding:72px 0}
+    .frow{grid-template-columns:1fr}
+    .tiles{grid-template-columns:1fr 1fr}
+    .hero-stats{gap:26px;flex-wrap:wrap}
     .foot-grid{grid-template-columns:1fr}
-    .cta{padding:44px 24px}
-    .hero-meta{gap:20px}
   }
 </style>
 </head>
@@ -167,18 +277,17 @@
 <!-- NAV -->
 <header>
   <div class="wrap nav">
-    <a href="#top" class="brand"><span class="logo">C</span> CONICS</a>
+    <a href="#top" class="brand">
+      <svg class="logo-ic" viewBox="0 0 40 40" fill="none"><path d="M31 12.5A13 13 0 1 0 33 26" stroke="#42b3a1" stroke-width="5.4" stroke-linecap="round"/><circle cx="30.5" cy="21" r="3.4" fill="#42b3a1"/></svg>
+      <span class="brand-txt">CONICS</span>
+    </a>
     <nav class="nav-links" id="navlinks">
-      <a href="#platform">Platform</a>
       <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="#showcase">Payments</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn-ghost">Sign in</a>
-      <a href="#contact" class="btn btn-primary">Get Started</a>
-    </div>
+    <a href="#contact" class="btn btn-teal" style="padding:11px 22px">Request a Demo</a>
     <button class="menu-btn" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
   </div>
 </header>
@@ -186,161 +295,328 @@
 <!-- HERO -->
 <a id="top"></a>
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow"><span class="dot"></span> Precision-built for engineering projects</span>
-      <h1>One platform for <span class="grad">Consultants, Contractors &amp; Clients</span></h1>
-      <p class="lead">CONICS connects every stakeholder on a single, precision-built platform — from project creation and document control to invoicing milestones and payment approval.</p>
+      <span class="eyebrow">Construction Project Management, Reimagined</span>
+      <h1>One Platform. Every Project. Full Control.</h1>
+      <p class="lead">CONICs connects Engineering Consultants, Contractors, and Clients on a single, precision-built platform — from project creation and document control to invoicing milestones and payment approval.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Start free →</a>
-        <a href="#how" class="btn btn-ghost">See how it works</a>
+        <a href="#contact" class="btn btn-teal">Request a Demo →</a>
+        <a href="#workflow" class="btn btn-ghost-light">See How It Works →</a>
       </div>
-      <div class="hero-meta">
-        <div class="m"><strong>3-in-1</strong><span>Consultant · Contractor · Client</span></div>
-        <div class="m"><strong>100%</strong><span>Document control</span></div>
-        <div class="m"><strong>Milestone</strong><span>Based invoicing</span></div>
+      <div class="hero-stats">
+        <div class="s"><strong>500+</strong><span>Projects managed</span></div>
+        <div class="s"><strong>98%</strong><span>Approval accuracy</span></div>
+        <div class="s"><strong>3×</strong><span>Faster sign-offs</span></div>
       </div>
     </div>
     <div class="hero-visual">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1100&q=80" alt="Engineers reviewing project plans" />
-      <div class="float-card fc-1"><span class="ic">✓</span><div><small>Milestone approved</small><b>Invoice #0421 · Paid</b></div></div>
-      <div class="float-card fc-2"><span class="ic">📄</span><div><small>Document control</small><b>Rev. C signed off</b></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- AUDIENCE STRIP -->
-<div class="audience">
-  <div class="wrap">
-    <p>Built for the people who deliver projects:</p>
-    <span class="pill">Engineering Consultants</span>
-    <span class="pill">Contractors</span>
-    <span class="pill">Clients &amp; Owners</span>
-  </div>
-</div>
-
-<!-- FEATURES -->
-<section class="pad" id="features">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag">Everything in one place</span>
-      <h2>From first drawing to final payment</h2>
-      <p>Stop juggling emails, spreadsheets and disconnected tools. CONICS brings your whole project lifecycle under one roof.</p>
-    </div>
-    <div class="features">
-      <div class="card"><div class="ic">🗂️</div><h3>Create Projects</h3><p>Spin up a structured project in minutes, invite consultants, contractors and clients, and set the scope everyone works from.</p></div>
-      <div class="card"><div class="ic">📐</div><h3>Document Control</h3><p>Version-controlled drawings, submittals and revisions — always the latest, always traceable, never lost in an inbox.</p></div>
-      <div class="card"><div class="ic">📝</div><h3>Generate Forms</h3><p>Issue RFIs, inspection requests and approval forms from ready-made templates and route them for sign-off automatically.</p></div>
-      <div class="card"><div class="ic">📊</div><h3>Milestone Invoicing</h3><p>Tie invoices to project milestones so billing reflects real progress — no surprises, no disputes.</p></div>
-      <div class="card"><div class="ic">✅</div><h3>Payment Approval</h3><p>Structured approval workflows move payment certificates from submission to release with a clear audit trail.</p></div>
-      <div class="card"><div class="ic">🔒</div><h3>Precision &amp; Trust</h3><p>Role-based access keeps every party seeing exactly what they should — accurate, secure and accountable.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="pad how" id="how">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag">How it works</span>
-      <h2>Three steps to a connected project</h2>
-      <p>CONICS keeps consultants, contractors and clients moving in sync — from kickoff to payment.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><h3>Create the project</h3><p>Set up your project, define milestones and invite every stakeholder into one shared workspace.</p></div>
-      <div class="step"><h3>Control the documents</h3><p>Upload drawings and forms, manage revisions and route approvals — all tracked in real time.</p></div>
-      <div class="step"><h3>Invoice &amp; get paid</h3><p>Bill against completed milestones and move payments through approval with full transparency.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SPLIT SHOWCASE -->
-<section class="pad" id="showcase">
-  <div class="wrap split">
-    <div>
-      <span class="tag" style="color:var(--sky);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px">Invoicing &amp; payments</span>
-      <h2>Milestones in. Payments out. Fully controlled.</h2>
-      <p style="color:var(--slate);font-size:16px">Every invoice on CONICS is tied to real project progress and moves through a clear, auditable approval chain — so clients pay with confidence and contractors get paid on time.</p>
-      <ul>
-        <li><span class="ck">✓</span><span><b>Milestone-based billing</b> — invoice only what's been delivered and verified.</span></li>
-        <li><span class="ck">✓</span><span><b>Approval workflows</b> — submissions route to the right approver automatically.</span></li>
-        <li><span class="ck">✓</span><span><b>Full audit trail</b> — every revision, sign-off and payment is recorded.</span></li>
-        <li><span class="ck">✓</span><span><b>One source of truth</b> — consultants, contractors and clients see the same live status.</span></li>
-      </ul>
-      <div class="hero-actions" style="margin-top:30px"><a href="#contact" class="btn btn-amber">Request a demo</a></div>
-    </div>
-    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1100&q=80" alt="Financial documents and project invoicing" />
-  </div>
-</section>
-
-<!-- PLATFORM / SPLIT 2 -->
-<section class="pad how" id="platform">
-  <div class="wrap split">
-    <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1100&q=80" alt="Project team collaborating" />
-    <div>
-      <span class="tag" style="color:var(--sky);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px">The platform</span>
-      <h2>One workspace the whole project trusts</h2>
-      <p style="color:var(--slate);font-size:16px">No more scattered files or version confusion. CONICS gives engineering consultants, contractors and clients a single precision-built environment where documents, forms, milestones and payments all live together.</p>
-      <ul>
-        <li><span class="ck">✓</span><span><b>Role-based access</b> for every stakeholder.</span></li>
-        <li><span class="ck">✓</span><span><b>Live document control</b> with version history.</span></li>
-        <li><span class="ck">✓</span><span><b>Templated forms</b> for RFIs, inspections and approvals.</span></li>
-      </ul>
-      <div class="hero-actions" style="margin-top:30px"><a href="#features" class="btn btn-primary">Explore features</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="pad" id="contact">
-  <div class="wrap">
-    <div class="cta">
-      <h2>Bring your next project onto CONICS</h2>
-      <p>Connect your consultants, contractors and clients on one precision-built platform — and take control from project creation to final payment.</p>
-      <div class="hero-actions">
-        <a href="mailto:info@conics.me" class="btn btn-amber">Get started free</a>
-        <a href="mailto:info@conics.me" class="btn btn-ghost">Talk to us</a>
+      <div class="mock">
+        <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><div class="mock-url"><b>app.conics.me</b> / dashboard</div></div>
+        <div class="mock-body">
+          <div class="mock-head"><span class="t">Project Overview — Q3 2026</span><span class="badge live">Live</span></div>
+          <div class="tiles">
+            <div class="tile"><small>Active Projects</small><b>14</b><em>+2</em></div>
+            <div class="tile"><small>Pending Approvals</small><b>7</b><em>−3</em></div>
+            <div class="tile"><small>Budget Utilisation</small><b>68%</b><em>On track</em></div>
+          </div>
+          <div class="prow"><div><div class="pn">Al-Noor Bridge Expansion</div><div class="ps">In Progress</div></div><div><div class="bar"><i style="width:72%"></i></div><div class="pct">72%</div></div></div>
+          <div class="prow"><div><div class="pn">Marina Tower — Phase 2</div><div class="ps">Approval Pending</div></div><div><div class="bar"><i style="width:45%"></i></div><div class="pct">45%</div></div></div>
+          <div class="prow"><div><div class="pn">Industrial Zone Road</div><div class="ps">On Schedule</div></div><div><div class="bar"><i style="width:88%"></i></div><div class="pct">88%</div></div></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="pad workflow grid-light" id="workflow">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center">The CONICS Workflow</span>
+      <h2>From project brief to final payment —<br>in one system.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Create the Project</h3><p>Define scope, upload documents, set the timeline, budget, and provisional sum. Every stakeholder starts with the same source of truth.</p></div>
+      <div class="step"><div class="num">02</div><h3>Manage &amp; Approve</h3><p>Submit daily and monthly progress forms. Consultants review, annotate, and approve — with a full audit trail at every stage.</p></div>
+      <div class="step"><div class="num">03</div><h3>Invoice &amp; Pay</h3><p>Trigger invoicing milestones, route payment requests through the approval chain, and close out projects with confidence.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE CAPABILITIES -->
+<section class="pad caps" id="features">
+  <div class="caps-bg"></div>
+  <div class="wrap inner">
+    <div class="sec-head">
+      <span class="eyebrow">Core Capabilities</span>
+      <h2>Built for the complexity of real engineering projects.</h2>
+    </div>
+    <div class="caps-grid">
+      <div class="cap wide">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <h3>Project Creation &amp; Document Control</h3>
+        <p>Centralise all project documents, drawings, and specifications from day one. Version-controlled, permission-managed, always accessible.</p>
+      </div>
+      <div class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <h3>Timeline &amp; Budget Management</h3>
+        <p>Define milestones, track progress against schedule, and monitor budget consumption in real time.</p>
+      </div>
+      <div class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5.5c-1.2-1.3-3-2-5-2-2.8 0-5 1.6-5 4 0 5 10 3 10 8 0 2.4-2.2 4-5 4-2 0-3.8-.7-5-2"/></svg></div>
+        <h3>Provisional Sum Control</h3>
+        <p>Manage provisional sums with full transparency — allocate, adjust, and reconcile against actual costs.</p>
+      </div>
+      <div class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div>
+        <h3>Invoicing Milestones</h3>
+        <p>Set payment milestones tied to project progress. Automate invoice triggers and eliminate billing disputes.</p>
+      </div>
+      <div class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 4h6a1 1 0 0 1 1 1v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V5a1 1 0 0 1 1-1z"/><path d="M9 14l2 2 4-4"/></svg></div>
+        <h3>Daily &amp; Monthly Forms</h3>
+        <p>Standardised site forms submitted digitally, reviewed by the consultant, and archived with timestamps.</p>
+      </div>
+      <div class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="M6 8.4v7.2M8.4 6H14a3 3 0 0 1 3 3v.6M8.4 18H14a3 3 0 0 0 3-3v-.6"/></svg></div>
+        <h3>Approval Workflows</h3>
+        <p>Multi-tier approval chains for documents, variations, invoices, and payments — with full traceability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE THE PLATFORM -->
+<section class="pad inside plat grid-light">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center">Inside the Platform</span>
+      <h2>Every workflow, engineered to precision.</h2>
+    </div>
+    <div class="plat-grid">
+      <div>
+        <div class="mock">
+          <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><div class="mock-url"><b>app.conics.me</b> / project-dashboard</div></div>
+          <div class="mock-body">
+            <div class="mock-head"><span class="t">Project Overview — Q3 2026</span><span class="badge live">Live</span></div>
+            <div class="tiles">
+              <div class="tile"><small>Active Projects</small><b>14</b><em>+2</em></div>
+              <div class="tile"><small>Pending Approvals</small><b>7</b><em>−3</em></div>
+              <div class="tile"><small>Budget Utilisation</small><b>68%</b><em>On track</em></div>
+            </div>
+            <div class="prow"><div><div class="pn">Al-Noor Bridge Expansion</div><div class="ps">In Progress</div></div><div><div class="bar"><i style="width:72%"></i></div><div class="pct">72%</div></div></div>
+            <div class="prow"><div><div class="pn">Marina Tower — Phase 2</div><div class="ps">Approval Pending</div></div><div><div class="bar"><i style="width:45%"></i></div><div class="pct">45%</div></div></div>
+            <div class="prow"><div><div class="pn">Industrial Zone Road</div><div class="ps">On Schedule</div></div><div><div class="bar"><i style="width:88%"></i></div><div class="pct">88%</div></div></div>
+          </div>
+        </div>
+        <div class="plat-cap"><h3>Project Dashboard</h3><p>Real-time overview of all active projects, budget status, and pending approvals.</p></div>
+      </div>
+      <div>
+        <div class="mock">
+          <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><div class="mock-url"><b>app.conics.me</b> / approval-workflow</div></div>
+          <div class="mock-body">
+            <div class="mock-head"><span class="t">Invoice #INV-2026-0047</span><span class="badge warn">Awaiting Sign-off</span></div>
+            <div class="arow"><span class="chk on">✓</span><div><div class="an">K. Al-Mansouri</div><div class="ar">Site Engineer</div></div><span class="at">09:14</span></div>
+            <div class="arow"><span class="chk on">✓</span><div><div class="an">L. Petrov</div><div class="ar">Project Manager</div></div><span class="at">11:32</span></div>
+            <div class="arow"><span class="chk off">3</span><div><div class="an">D. Osei</div><div class="ar">Lead Consultant</div></div><span class="at">—</span></div>
+            <div class="arow"><span class="chk off">4</span><div><div class="an">M. Al-Farsi</div><div class="ar">Client Representative</div></div><span class="at">—</span></div>
+          </div>
+        </div>
+        <div class="plat-cap"><h3>Approval Workflow</h3><p>Multi-stage document and invoice approval with full audit trail.</p></div>
+      </div>
+      <div>
+        <div class="mock">
+          <div class="mock-bar"><div class="dots"><i></i><i></i><i></i></div><div class="mock-url"><b>app.conics.me</b> / invoicing-&amp;-payments</div></div>
+          <div class="mock-body">
+            <div class="mock-head"><span class="t">Invoicing Milestones</span><span class="badge paid">3 of 5 Paid</span></div>
+            <div class="mrow"><span class="md"></span><span class="mn">Mobilisation</span><span class="mv">$48,000</span><span class="mt paid">Paid</span></div>
+            <div class="mrow"><span class="md"></span><span class="mn">Foundation Complete</span><span class="mv">$120,000</span><span class="mt paid">Paid</span></div>
+            <div class="mrow"><span class="md"></span><span class="mn">Structural Frame</span><span class="mv">$210,000</span><span class="mt paid">Paid</span></div>
+            <div class="mrow"><span class="md"></span><span class="mn">MEP Rough-in</span><span class="mv">$95,000</span><span class="mt inv">Invoiced</span></div>
+            <div class="mrow"><span class="md up"></span><span class="mn">Practical Completion</span><span class="mv">$180,000</span><span class="mt upc">Upcoming</span></div>
+          </div>
+        </div>
+        <div class="plat-cap"><h3>Invoicing &amp; Payments</h3><p>Milestone-based invoicing with automated routing and payment tracking.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="pad cases grid-light" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Proven Outcomes</span>
+      <h2>Results that speak in engineering terms.</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case">
+        <div class="lab">Infrastructure — Road &amp; Bridge</div>
+        <h3>40% faster approvals</h3>
+        <p>A major infrastructure contractor reduced approval cycle times from 12 days to 7 by digitising the consultant review process on CONICs.</p>
+        <div class="who">Regional Infrastructure Authority</div>
+      </div>
+      <div class="case">
+        <div class="lab">Commercial — Mixed-Use Development</div>
+        <h3>Zero invoice disputes</h3>
+        <p>A 42-storey mixed-use development completed with no payment disputes — milestone-based invoicing kept all parties aligned throughout.</p>
+        <div class="who">Tier-1 Property Developer</div>
+      </div>
+      <div class="case">
+        <div class="lab">Industrial — Manufacturing Facility</div>
+        <h3>100% document compliance</h3>
+        <p>Full document control from tender to handover — every drawing, variation, and sign-off captured and auditable.</p>
+        <div class="who">Industrial Engineering Consultancy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FROM THE FIELD -->
+<section class="pad fromfield">
+  <div class="field-bg"></div>
+  <div class="wrap inner">
+    <div class="sec-head light">
+      <span class="eyebrow center">From the Field</span>
+      <h2>Trusted by engineers who demand precision.</h2>
+    </div>
+    <div class="quote-grid">
+      <div class="quote">
+        <span class="qm">”</span>
+        <p>CONICs eliminated the back-and-forth between our site team and the consultant's office. Approvals that used to take two weeks now happen in two days.</p>
+        <div class="by"><b>Mohammed Al-Rashid</b><span>Project Director · Al-Rashid Engineering Contractors</span></div>
+      </div>
+      <div class="quote">
+        <span class="qm">”</span>
+        <p>The invoicing milestone system is exactly what we needed. Our clients always know what they're paying for and when — no surprises, no disputes.</p>
+        <div class="by"><b>Sarah Chen</b><span>Senior Consultant · Chen &amp; Partners Consulting Engineers</span></div>
+      </div>
+      <div class="quote">
+        <span class="qm">”</span>
+        <p>As a client, I finally have full visibility into project progress without chasing weekly reports. The dashboard tells me everything I need to know.</p>
+        <div class="by"><b>James Okafor</b><span>Head of Capital Projects · Meridian Development Group</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pad pricing grid-light" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center">Transparent Pricing</span>
+      <h2>Structured for every scale of operation.</h2>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <div class="pname">Starter</div>
+        <div class="amt">$299 <span>per month</span></div>
+        <p class="pdesc">For small contractors and independent consultants managing up to 5 active projects.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Up to 5 active projects</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Document management</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Basic approval workflows</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Daily &amp; monthly forms</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Email support</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get Started</a>
+      </div>
+      <div class="plan pop">
+        <div class="pop-badge">Most Popular</div>
+        <div class="pname">Professional</div>
+        <div class="amt">$799 <span>per month</span></div>
+        <p class="pdesc">For growing firms managing multiple projects with full invoicing and payment workflows.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Up to 25 active projects</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Full invoicing milestones</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Provisional sum management</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Multi-tier approval chains</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Budget &amp; timeline tracking</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Priority support</li>
+        </ul>
+        <a href="#contact" class="btn btn-white">Start Free Trial</a>
+      </div>
+      <div class="plan">
+        <div class="pname">Enterprise</div>
+        <div class="amt">Custom <span>contact us</span></div>
+        <p class="pdesc">For large consultancies and contractors managing complex, multi-stakeholder project portfolios.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Unlimited projects</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Custom approval workflows</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>API integrations</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Dedicated account manager</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>SLA guarantee</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>On-premise option</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad contact grid-light" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Ready to bring precision to your projects?</h2>
+      <p class="lead">Request a personalised demo and see how CONICs fits your project structure.</p>
+      <ul class="clist">
+        <li><span class="cbx"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Personalised walkthrough of the platform</li>
+        <li><span class="cbx"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Tailored to your project structure</li>
+        <li><span class="cbx"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>No commitment required</li>
+      </ul>
+    </div>
+    <form class="form-card" onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Thanks — we\'ll be in touch within one business day.'">
+      <div class="frow">
+        <div class="field"><label>First Name</label><input type="text" placeholder="Mohammed" /></div>
+        <div class="field"><label>Last Name</label><input type="text" placeholder="Al-Rashid" /></div>
+      </div>
+      <div class="field"><label>Work Email</label><input type="email" placeholder="m.alrashid@company.com" /></div>
+      <div class="field"><label>Company</label><input type="text" placeholder="Al-Rashid Engineering" /></div>
+      <div class="field"><label>Role</label>
+        <select><option value="" disabled selected>Select your role</option><option>Engineering Consultant</option><option>Contractor</option><option>Client / Owner</option><option>Project Manager</option><option>Other</option></select>
+      </div>
+      <div class="field"><label>Message (optional)</label><textarea placeholder="Tell us about your project structure..."></textarea></div>
+      <button type="submit" class="btn btn-teal">Send Request →</button>
+      <p class="form-note">We respond within one business day.</p>
+    </form>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="grid-light">
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="brand"><span class="logo">C</span> CONICS</div>
-        <p class="about">The precision-built platform connecting Engineering Consultants, Contractors and Clients — from project creation to payment approval.</p>
+        <a href="#top" class="brand">
+          <svg class="logo-ic" viewBox="0 0 40 40" fill="none"><path d="M31 12.5A13 13 0 1 0 33 26" stroke="#42b3a1" stroke-width="5.4" stroke-linecap="round"/><circle cx="30.5" cy="21" r="3.4" fill="#42b3a1"/></svg>
+        </a>
+        <p class="foot-about">The engineering-grade platform connecting Consultants, Contractors, and Clients — from project creation to final payment.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M22 5.8c-.7.3-1.5.6-2.3.7a4 4 0 0 0 1.8-2.2c-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.8 3.6A11.3 11.3 0 0 1 3.6 4.6a4 4 0 0 0 1.2 5.3c-.6 0-1.2-.2-1.8-.5a4 4 0 0 0 3.2 3.9c-.5.2-1.1.2-1.7.1a4 4 0 0 0 3.7 2.8A8 8 0 0 1 2 18a11.3 11.3 0 0 0 17.4-9.5c.8-.6 1.5-1.3 2-2.1z"/></svg></a>
+          <a href="mailto:info@conics.me" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        </div>
       </div>
       <div>
         <h4>Product</h4>
-        <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#showcase">Invoicing</a></li>
-          <li><a href="#platform">Platform</a></li>
-        </ul>
+        <ul><li><a href="#features">Features</a></li><li><a href="#cases">Case Studies</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#contact">Request a Demo</a></li></ul>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul><li><a href="#features">Project Management</a></li><li><a href="#features">Invoicing &amp; Payments</a></li><li><a href="#features">Approval Workflows</a></li><li><a href="#features">Document Control</a></li></ul>
       </div>
       <div>
         <h4>Company</h4>
-        <ul>
-          <li><a href="#top">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Request demo</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <ul>
-          <li><a href="mailto:info@conics.me">info@conics.me</a></li>
-          <li><a href="#top">conics.me</a></li>
-        </ul>
+        <ul><li><a href="#top">About CONICs</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 CONICS. All rights reserved.</span>
-      <span>Built on a single, precision-built platform.</span>
+      <span>© 2026 CONICS. All rights reserved. conics.me</span>
+      <span>Engineering-grade project management for the built environment.</span>
     </div>
   </div>
 </footer>
