@@ -1,0 +1,64 @@
+========================================================
+ HOW TO EDIT YOUR CONICS WEBSITE (conics.me)
+========================================================
+
+Your whole website is ONE file:  index.html
+It lives in this folder.
+
+--------------------------------------------------------
+ OPTION A - Edit on your own computer (recommended)
+--------------------------------------------------------
+1. Open  index.html  in a code editor.
+   - Best: VS Code (already installed). Right-click index.html
+     -> "Open with Code".  Or just open it in Notepad.
+
+2. Change the text, colours, links, etc. and SAVE.
+   - To preview before publishing: double-click index.html
+     to open it in your browser.
+
+3. Double-click  PUBLISH.bat
+   - It commits your change and pushes it to GitHub.
+   - Wait about 1 minute, then refresh https://conics.me
+
+That's it. No commands to type.
+
+--------------------------------------------------------
+ OPTION B - Edit directly on GitHub (from any browser)
+--------------------------------------------------------
+1. Go to:
+   https://github.com/AhmedMNassarSite/Conics-Website/edit/main/index.html
+2. Edit in the browser, scroll down, click "Commit changes".
+3. conics.me updates automatically in ~1 minute.
+
+   For a full editor in the browser, open the repo and press the
+   "." (dot) key - it launches VS Code inside your browser
+   (github.dev). Edit, then use the Source Control panel to
+   commit + push.
+
+--------------------------------------------------------
+ QUICK REFERENCE - where things are in index.html
+--------------------------------------------------------
+- COLOURS: near the top, inside  :root { ... }
+    --teal   = the green accent (#42b3a1)
+    --navy   = the dark blue (#12303f)
+  Change the hex codes to recolour the whole site.
+
+- HERO HEADLINE: search for
+    One Platform. Every Project. Full Control.
+
+- PRICING: search for  $299 / $799  to change plans.
+
+- PHOTOS: search for  images.unsplash.com
+  Replace the URLs to swap the background photos.
+
+- CONTACT EMAIL: search for  info@conics.me
+
+--------------------------------------------------------
+ NOTES
+--------------------------------------------------------
+- Do NOT delete the file named  CNAME  - it keeps your
+  custom domain (conics.me) working.
+- If PUBLISH.bat ever asks you to sign in to GitHub, just
+  complete the sign-in window that pops up once; it will be
+  remembered afterwards.
+========================================================
